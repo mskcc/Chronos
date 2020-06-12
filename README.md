@@ -9,14 +9,22 @@ import uuid
 
 class BaseModel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+def test_create_file_obj_bad_file_group(self):
+        file_group_id = str(uuid.uuid4())
+
 ```
 
 then change it to:
 
 ```{python}
-import genTemporalUUID
+import chronos
 
 class BaseModel(models.Model):
-    id = models.UUIDField(primary_key=True, default=genTemporalUUID.genTemporalUUID, editable=False)
+    id = models.UUIDField(primary_key=True, default=chronos.uuidT, editable=False)
+
+def test_create_file_obj_bad_file_group(self):
+        file_group_id = str(chronos.uuidT())
+
 ```
 
