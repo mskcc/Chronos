@@ -67,3 +67,8 @@ uuidTStr == "DDDDCCCC-AAAA-BBBB-RRRR-SSSSSSSS"
              MSB            LSB  Random UUID
 ```
 
+With 8 bytes of randomness you would need to generate ` ~ 2^(4*8) ~ 4e9` uuid's in the smallest time resolution of your computer which is likely less than a microsec to have a 50% chance of a collision. And at nanosecond resolution you would have rollover in `~500` years.
+
+
+
+
