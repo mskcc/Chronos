@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-## @package genTemporalUUID
+## @package chronos
 #  Generate UUID's that will sort chronologically (χρονικός)
 #
 
@@ -8,7 +8,7 @@ import sys
 import uuid
 import re
 
-def genTemporalUUID():
+def uuidT():
 
     uuTime=str(uuid.uuid1()).split("-")
     uuRand=str(uuid.uuid4()).split("-")
