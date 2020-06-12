@@ -23,11 +23,16 @@ def main(args):
     # operate on just the first CLI arg for now
     numUUIDs = int(args[0])
     # assume we are passing in a project ID to use with generateIGOBasedPortalUUID
-    for ii in range(numUUIDs):
-        try:
-            print(genTemporalUUID())
-        except BrokenPipeError:
-            sys.exit(0)
+
+    if numUUIDs < 100:
+        uuids=[genTemporalUUID() for x in range(numUUIDs)]
+        print("\n".join(uuids))
+    else:
+        for ii in range(numUUIDs):
+            try:
+                print(genTemporalUUID())
+            except BrokenPipeError:
+                sys.exit(0)
 
 def parse():
     """
