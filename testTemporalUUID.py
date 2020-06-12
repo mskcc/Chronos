@@ -19,11 +19,11 @@ def main(args):
 
     if numUUIDs < 100:
         uuids=[genTemporalUUID() for x in range(numUUIDs)]
-        print("\n".join(uuids))
+        print("\n".join(map(str,uuids)))
     else:
         for ii in range(numUUIDs):
             try:
-                print(genTemporalUUID())
+                print(str(genTemporalUUID()))
             except BrokenPipeError:
                 sys.exit(0)
 
