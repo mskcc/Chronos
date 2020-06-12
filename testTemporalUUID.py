@@ -7,7 +7,7 @@
 import sys
 import uuid
 import re
-from genTemporalUUID import genTemporalUUID
+import chronos
 
 def main(args):
     """
@@ -18,12 +18,12 @@ def main(args):
     # assume we are passing in a project ID to use with generateIGOBasedPortalUUID
 
     if numUUIDs < 100:
-        uuids=[genTemporalUUID() for x in range(numUUIDs)]
+        uuids=[chronos.uuidT() for x in range(numUUIDs)]
         print("\n".join(map(str,uuids)))
     else:
         for ii in range(numUUIDs):
             try:
-                print(str(genTemporalUUID()))
+                print(str(chronos.uuidT()))
             except BrokenPipeError:
                 sys.exit(0)
 
